@@ -1,0 +1,54 @@
+﻿@model IEnumerable<RegistroChamado.Models.SetorModel>
+
+@{
+    ViewData["Title"] = "Setores";
+}
+
+<h3 class="h3">@ViewData["Title"]</h3>
+<hr/>
+<div class="row gap-4">
+    <a asp-action="Create" class="btn btn-success btn-block">Cadastrar Setor</a>
+</div>
+<hr/>
+<table class="table table-bordered gap-4">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @{
+                        string status = "";
+                        if (item.Status == 1)
+                        {
+                            status = "Ativo";
+                        }
+                        else
+                        {
+                            status = "Inativo";
+                        }
+                    }
+                    @status
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm" onclick="return confirm('Deseja realmente deletar?')">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

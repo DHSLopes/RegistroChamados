@@ -1,0 +1,59 @@
+﻿@model IEnumerable<RegistroChamado.Models.ColaboradorModel>
+
+@{
+    ViewData["Title"] = "Colaboradores";
+}
+
+<h3 class="h3">@ViewData["Title"]</h3>
+<hr/>
+<div class="row gap-4">
+    <a asp-action="Create" class="btn btn-success">Cadastrar Colaborador</a>
+</div>
+<hr/>
+<table class="table table-bordered gap-4">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SetorId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                    @{
+                        string status = "";
+                        if (item.Status == 1)
+                        {
+                            status = "Ativo";
+                        }
+                        else
+                        {
+                            status = "Inativo";
+                        }
+                    }
+                    @status
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SetorId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm" onclick="return confirm('Deseja realmente deletar?')">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
