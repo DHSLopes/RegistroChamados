@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nNJ3vBgAKMMykzsyolvau02fUPH6i1Qx5M/AuYRVpHIs1wAr1JI6oVAvim2Rd6uqIya3HW2sSppKKLBiVZ8uww==",
+  "dgSpecHash": "fbNIh+LyAE5kc+g/O6cTmbeNTQuhHr9xRF+McIGm0L+j2GlNpwSDVvOzpskP+HYnF006X48/GHFjUq1cIlWWWQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dlope\\OneDrive\\Documentos\\RegistroChamado\\RegistroChamado\\RegistroChamado.csproj",
+  "projectFilePath": "C:\\dio-git-e-github\\RegistroChamados\\RegistroChamado\\RegistroChamado.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dlope\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\dlope\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

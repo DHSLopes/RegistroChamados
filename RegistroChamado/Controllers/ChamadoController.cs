@@ -54,7 +54,7 @@ namespace RegistroChamado.Controllers
             var defItem = new SelectListItem()
             {
                 Value = "",
-                Text = "----- Selecione um Setor -----"
+                Text = "----- SELECIONE UM SETOR -----"
             };
             lstSetores.Insert(0, defItem);
             return lstSetores;
@@ -74,7 +74,7 @@ namespace RegistroChamado.Controllers
             var defItem = new SelectListItem()
             {
                 Value = "",
-                Text = "----- SELECIONE O COLABORADOR -----"
+                Text = "----- SELECIONE UM COLABORADOR -----"
             };
             lstColaborador.Insert(0, defItem);
             return lstColaborador;
@@ -84,9 +84,15 @@ namespace RegistroChamado.Controllers
         // GET: Chamado/Create
         public IActionResult Create()
         {
-            ViewBag.Setor = GetSetor();
-            ViewBag.Colaborador = GetColaborador();
+            ViewBag.SetorId = GetSetor();
+            ViewBag.ColaboradorId = GetColaborador();
             return View();
+        }
+        [HttpGet]
+        public JsonResult GetColaboradorPorSetor(int SetorId)
+        {
+            List<SelectListItem> colaboradores = GetColaborador(SetorId);
+            return Json(colaboradores);
         }
 
         // POST: Chamado/Create
