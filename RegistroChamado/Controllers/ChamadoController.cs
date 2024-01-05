@@ -100,8 +100,9 @@ namespace RegistroChamado.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,DataHora,IdSetor,IdColaborador,Titulo,Descricao,Prioridade,Status")] ChamadoModel chamadoModel)
+        public async Task<IActionResult> Create([Bind("Id,DataHora,SetorId,ColaboradorId,Titulo,Descricao,Prioridade,Status")] ChamadoModel chamadoModel)
         {
+            Console.WriteLine(ModelState.Values);
             if (ModelState.IsValid)
             {
                 _context.Add(chamadoModel);

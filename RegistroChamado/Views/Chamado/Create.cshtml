@@ -1,12 +1,9 @@
 ﻿@model RegistroChamado.Models.ChamadoModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Registrar Chamado";
 }
-
-<h1>Create</h1>
-
-<h4>ChamadoModel</h4>
+<h3 class="h3">@ViewData["Title"]</h3>
 <hr />
 <div class="container">
     <form asp-action="Create">
@@ -19,12 +16,15 @@
         <div class="row">
             <div class="col">
                 <label asp-for="SetorId" class="control-label"></label>
-                <select asp-for="SetorId" id="listSetor" class ="form-control" asp-items="ViewBag.SetorId"
-                        onchange="preencheColaborador(this,listColaborador)"></select>
+                <select asp-for="SetorId" id="listSetor" class="form-control" asp-items="ViewBag.SetorId"
+                        onchange="preencheColaborador(this,listColaborador)">
+                </select>
             </div>
             <div class="col">
                 <label asp-for="ColaboradorId" class="control-label"></label>
-                <select asp-for="ColaboradorId" id="listColaborador" class ="form-control" asp-items="ViewBag.ColaboradorId"></select>
+                <select asp-for="ColaboradorId" id="listColaborador" class="form-control" asp-items="ViewBag.ColaboradorId">
+
+                </select>
             </div>
         </div>
         <div class="row">
@@ -34,18 +34,18 @@
         </div>
         <div class="col">
             <label asp-for="Descricao" class="control-label"></label>
-            <textarea asp-for="Descricao" class="form-control" ></textarea>
+            <textarea asp-for="Descricao" class="form-control"></textarea>
             <span asp-validation-for="Descricao" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="Prioridade" class="control-label"></label>
             <select asp-for="Prioridade" class="form-control">
                 <option value="Muito Alta">Muito Alta</option>
-                <option value="Muito Alta">Alta</option>
-                <option value="Muito Alta">Importante</option>
-                <option value="Muito Alta" selected>Normal</option>
-                <option value="Muito Alta">Baixa</option>
-                <option value="Muito Alta">Muito Baixa</option>
+                <option value="Alta">Alta</option>
+                <option value="Importante">Importante</option>
+                <option value="Normal" selected>Normal</option>
+                <option value="Baixa">Baixa</option>
+                <option value="Muito Baixa">Muito Baixa</option>
             </select>
             <span asp-validation-for="Prioridade" class="text-danger"></span>
         </div>
@@ -58,14 +58,15 @@
             </select>
             <span asp-validation-for="Status" class="text-danger"></span>
         </div>
+        <hr/>
         <div class="row">
-            <input type="submit" value="Create" class="btn btn-primary" />
+            <input type="submit" value="Registrar Chamado" class="btn btn-primary" />
         </div>
     </form>
 </div>
-<br />
+<hr/>
 <div class="row">
-    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar a lista</a>
 </div>
 
 @section Scripts {
