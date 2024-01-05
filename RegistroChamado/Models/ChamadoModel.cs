@@ -13,13 +13,13 @@ namespace RegistroChamado.Models
         [Required]
         [ForeignKey("Id")]
         [DisplayName("Setor")]
-        public int SetorId { get; set; }
-        public virtual SetorModel Setor { get; set; }
+        public required int SetorId { get; set; }
+        public virtual SetorModel? Setor { get; set; }
         
         [ForeignKey("Id")]
         [DisplayName("Colaborador")]
-        public int ColaboradorId { get; set; }
-        public virtual ColaboradorModel Colaborador { get; set; }
+        public required int ColaboradorId { get; set; }
+        public virtual ColaboradorModel? Colaborador { get; set; }
 
         public required string Titulo { get; set; }
         public required string Descricao { get; set; }

@@ -41,10 +41,29 @@ namespace RegistroChamado.Controllers
 
             return View(colaboradorModel);
         }
+        private List<SelectListItem> GetSetor()
+        {
+            var lstSetores = new List<SelectListItem>();
+            List<SetorModel> Setor = _context.Setor.ToList();
+            lstSetores = Setor.Select(se => new SelectListItem()
+            {
+                Value = se.Id.ToString(),
+                Text = se.Descricao.ToString()
+            }).ToList();
+
+            var defItem = new SelectListItem()
+            {
+                Value = "",
+                Text = "----- SELECIONE UM SETOR -----"
+            };
+            lstSetores.Insert(0, defItem);
+            return lstSetores;
+        }
 
         // GET: Colaborador/Create
         public IActionResult Create()
         {
+            ViewBag.Setores = GetSetor();
             return View();
         }
 
