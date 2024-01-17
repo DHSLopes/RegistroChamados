@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "Relatórios";
+}
+
+<h3>@ViewData["Title"]</h3>
+<h4>Selecione o relatório desejado</h4>
+
+<div class="container">
+    <div class="d-grid gap-4">
+        <button class="btn btn-primary">
+            <a class="nav-link text-white text-decoration-none" asp-area="" asp-controller="Relatorio" asp-action="RelatorioPeriodo">
+                RELATÓRIO POR PERÍODO
+            </a>
+        </button>
+        <button class="btn btn-success">
+            <a class="nav-link text-white text-decoration-none" asp-area="" asp-controller="Relatorio" asp-action="RelatorioSetor">
+                RELATÓRIO POR SETOR 
+            </a>
+        </button>
+        <button class="btn btn-info">
+            <a class="nav-link text-white text-decoration-none" asp-area="" asp-controller="Relatorio" asp-action="RelatorioColaborador">
+                RELATÓRIO POR COLABORADOR
+            </a>
+        </button>
+        <button class="btn btn-secondary">
+            <a class="nav-link text-white text-decoration-none" asp-area="" asp-controller="Relatorio" asp-action="RelatorioSituacao">
+                RELATÓRIO POR SITUAÇÃO
+            </a>
+        </button>
+        <button class="btn btn-danger">
+            <a class="nav-link text-white text-decoration-none" asp-area="" asp-controller="Relatorio" asp-action="RelatorioPrioridade">
+                RELATÓRIO POR PRIORIDADE
+            </a>
+        </button>
+    </div>
+</div>
+
+

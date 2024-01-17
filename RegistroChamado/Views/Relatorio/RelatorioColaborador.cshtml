@@ -1,0 +1,21 @@
+﻿@model RegistroChamado.Models.ColaboradorModel;
+@{
+    ViewData["Title"] = "Relatório por colaborador";
+}
+
+<h3>@ViewData["Title"]</h3>
+
+<div class="container">
+    <div class="row">
+        <label class="control-label gap-4">Selecione o colaborador:</label>
+        <select asp-for="Id" id="listColaborador" class="form-control" asp-items="ViewBag.Colaboradores">
+        </select>
+    </div>
+    <div class="row">
+        <button class="btn btn-info">
+            <a class="nav-link text-white text-decoration-none" asp-area="" asp-controller="Relatorio" asp-action="RelatorioColaborador">
+                RELATÓRIO POR COLABORADOR
+            </a>
+        </button>
+    </div>
+</div>
