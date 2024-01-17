@@ -79,8 +79,6 @@ namespace RegistroChamado.Controllers
             lstColaborador.Insert(0, defItem);
             return lstColaborador;
         }
-
-
         // GET: Chamado/Create
         public IActionResult Create()
         {
@@ -94,7 +92,6 @@ namespace RegistroChamado.Controllers
             List<SelectListItem> colaboradores = GetColaborador(SetorId);
             return Json(colaboradores);
         }
-
         // POST: Chamado/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
