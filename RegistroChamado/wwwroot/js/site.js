@@ -21,3 +21,23 @@ function preencheColaborador(lstSetorCtrl, lstColaboradorId) {
     }
     return;
 }
+
+function consultaChamadosColaborador(lstSetorCtrl, lstColaboradorId) {
+    var lstColaboradores = $(lstColaboradorId);
+    lstColaboradores.empty();
+    var setorSelecionado = lstSetorCtrl.options[lstSetorCtrl.selectedIndex].value;
+    if (setorSelecionado != null && setorSelecionado != '') {
+        $.getJSON("/colaborador/GetChamadoColaborador", { SetorId: setorSelecionado }, function (colaboradores) {
+            if (colaboradores != null && !jQuery.isEmptyObject(colaboradores)) {
+                $.each(colaboradores, function (index, colab) {
+                    lstColaboradores.append($('<option/>', {
+
+                        value: colab.value,
+                        text: colab.text
+                    }));
+                });
+            };
+        });
+    }
+    return;
+}

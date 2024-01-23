@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RegistroChamado")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+77956d0208732d69734e112280a70187a211c132")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+887f191866ede4aeb7565eae9ec87e2e244ec7df")]
 [assembly: System.Reflection.AssemblyProductAttribute("RegistroChamado")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RegistroChamado")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

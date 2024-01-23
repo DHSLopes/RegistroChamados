@@ -33,29 +33,26 @@ namespace RegistroChamado.Controllers
                 Value = "",
                 Text = "----- SELECIONE UM COLABORADOR -----"
             };
+            var defGeral = new SelectListItem()
+            {
+                Value = "",
+                Text = "Todos"
+            };
             lstColaborador.Insert(0, defItem);
+            lstColaborador.Insert(1, defGeral);
             return lstColaborador;
         }
         private List<SelectListItem> GetChamadosColaborador(int idColaborador)
         {
-            var dt = new DataTable();
-            DataTable dataTable = new DataTable();
-            dataTable.Load((IDataReader)_context.Chamado
-                .Select(c => c.Colaborador)
-                .Where(c => c.ColaboradorId == idColaborador)
-                .OrderBy(n => n.DataHora)
-                .GroupBy(c => c.ColaboradorId)
-                );
             List<SelectListItem> lstColaborador = _context.Chamado
-                .OrderBy(n => n.DataHora)
+                .Where(c => c.ColaboradorId == idColaborador)
+                .OrderBy(n => n.ColaboradorId)
                 .Select(n =>
                 new SelectListItem
                 {
                     Value = n.Id.ToString(),
-                    Text = n.Titulo
+                    Text = n.Descricao
                 }).ToList();
-
-
             return lstColaborador;
         }
         [HttpGet]
@@ -67,8 +64,7 @@ namespace RegistroChamado.Controllers
         [HttpPost]
         public async Task<IActionResult> RelatorioColaborador(int IdColaborador)
         {
-            ViewBag.Colaboradores = GetColaborador();
-            
+            ViewBag.Colaboradores = GetChamadosColaborador(IdColaborador);            
             return View();
         }
         public ActionResult RelatorioPeriodo()
