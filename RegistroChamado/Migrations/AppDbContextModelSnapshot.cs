@@ -60,7 +60,7 @@ namespace RegistroChamado.Migrations
 
                     b.HasIndex("SetorId");
 
-                    b.ToTable("Chamado");
+                    b.ToTable("Chamado", (string)null);
                 });
 
             modelBuilder.Entity("RegistroChamado.Models.ColaboradorModel", b =>
@@ -85,7 +85,7 @@ namespace RegistroChamado.Migrations
 
                     b.HasIndex("SetorId");
 
-                    b.ToTable("Colaborador");
+                    b.ToTable("Colaborador", (string)null);
                 });
 
             modelBuilder.Entity("RegistroChamado.Models.SetorModel", b =>
@@ -105,7 +105,7 @@ namespace RegistroChamado.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Setor");
+                    b.ToTable("Setor", (string)null);
                 });
 
             modelBuilder.Entity("RegistroChamado.Models.ChamadoModel", b =>

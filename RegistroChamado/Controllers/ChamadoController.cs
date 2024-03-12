@@ -41,6 +41,10 @@ namespace RegistroChamado.Controllers
 
             return View(chamadoModel);
         }
+        public IActionResult Solucao(int? id)
+        {
+            return RedirectToAction("Create","Solucao", id);
+        }
         private List<SelectListItem> GetSetor()
         {
             var lstSetores = new List<SelectListItem>();
